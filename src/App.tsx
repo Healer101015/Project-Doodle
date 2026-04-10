@@ -9,6 +9,9 @@ type Task = {
 
 
 
+
+
+
 function App() {
 
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -46,28 +49,32 @@ function App() {
 
   return (
 
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
 
-      <h1 className="text-2xl font-bold mb-4">To-Do List</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">📝 Minhas Tasks</h1>
 
-      <div className="mb-4 flex">
+      <div className="flex gap-2 mb-4">
 
         <input
           type="text"
           value={input}
           onChange={e => setInput(e.target.value)}
-          placeholder="Add a new task"
-          className="flex-grow p-2 border border-gray-300 rounded-l"
+          placeholder="Nova tarefa"
+          className="flex-1 p-2 rounded bg-gray-700 outline-none"
         />
 
         <button
           onClick={addTask}
-          className="bg-blue-500 text-white px-4 py-2 rounded-r"
+          className="bg-blue-500 px-4 rounded hover:bg-blue-600"
         >
-          Add
+          Adicionar
         </button>
 
       </div>
+
+
+
+
 
       <ul>
         {tasks.map(task => (
